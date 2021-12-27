@@ -1,0 +1,18 @@
+<html lang="en">
+{% include 'head.tmpl' %}
+<body>
+    <div class="wrapper">
+        {% include 'header.tmpl' %}
+        <div class="content">
+            <div class="images_wrapper">
+            {% for d in data %}
+                <a href="image.php?id={{ d.id|escape }}" target="blank">
+                    <img src="src/images/small/{{ d.title|escape }}" alt="{{ d.alt|escape }}">
+                </a>
+            {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
