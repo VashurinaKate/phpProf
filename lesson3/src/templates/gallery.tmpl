@@ -6,13 +6,18 @@
         <div class="content">
             <div class="images_wrapper">
             {% for d in data %}
-                <a href="image.php?id={{ d.id|escape }}" target="blank">
+                <a href="image.php?id={{ d.id|escape }}" target="blank" class="image">
                     <img src="src/images/small/{{ d.title|escape }}" alt="{{ d.alt|escape }}">
                 </a>
             {% endfor %}
             </div>
         </div>
-        
+        <a href="?limit={{ count + 3 }}" id="showMore">Download more</a>
+        <form action="downloadImage.php" method="post" enctype="multipart/form-data">
+            <p>Выберите файл</p>
+            <input type="file" accept="image/*" name="photo">
+            <input type="submit" value="Сохранить">
+        </form>
     </div>
 </body>
 </html>

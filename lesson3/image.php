@@ -1,5 +1,7 @@
 <?php
 require_once 'Twig/Autoloader.php';
+// include 'config.php';
+
 Twig_Autoloader::register();
 
 try {
